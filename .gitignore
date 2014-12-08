@@ -1,19 +1,7 @@
-# Ignore everything
-*
+# Ignore
+/books/
+/coursera-android-course/
 
 # Whitelist files in the root
-!.gitignore
-!README.md
-
-# Whitelist the directories
-!treehouse/
-!treehouse/blog-reader/
-!treehouse/blog-reader/*
-!treehouse/fun-facts/
-!treehouse/fun-facts/*
-!treehouse/interactive-story/
-!treehouse/interactive-story/*
-!treehouse/master-detail-example/
-!treehouse/master-detail-example/*
-
-# Whitelist the files in the directories
+# !.gitignore
+# !README.md
