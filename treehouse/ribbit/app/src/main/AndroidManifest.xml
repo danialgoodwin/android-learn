@@ -2,14 +2,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="net.simplyadvanced.ribbit" >
 
+    <!-- Required by Parse. -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Required by Parse. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name="net.simplyadvanced.ribbit.RibbitApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
             android:name="net.simplyadvanced.ribbit.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,6 +27,25 @@
         <activity
             android:name="net.simplyadvanced.ribbit.LoginActivity"
             android:label="@string/title_activity_login"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="net.simplyadvanced.ribbit.SignUpActivity"
+            android:label="@string/title_activity_sign_up"
+            android:parentActivityName="net.simplyadvanced.ribbit.LoginActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".LoginActivity" />
+        </activity>
+        <activity
+            android:name="net.simplyadvanced.ribbit.EditFriendsActivity"
+            android:label="@string/title_activity_edit_friends"
+            android:screenOrientation="portrait"
+            android:parentActivityName="net.simplyadvanced.ribbit.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="net.simplyadvanced.ribbit.MainActivity" />
         </activity>
     </application>
 
