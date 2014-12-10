@@ -8,6 +8,13 @@
     <!-- Required by Parse. -->
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- Required to save picture to SD card. -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
     <application
         android:name="net.simplyadvanced.ribbit.RibbitApplication"
         android:allowBackup="true"
@@ -41,6 +48,15 @@
         <activity
             android:name="net.simplyadvanced.ribbit.EditFriendsActivity"
             android:label="@string/title_activity_edit_friends"
+            android:parentActivityName="net.simplyadvanced.ribbit.MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="net.simplyadvanced.ribbit.MainActivity" />
+        </activity>
+        <activity
+            android:name="net.simplyadvanced.ribbit.RecipientsActivity"
+            android:label="@string/title_activity_recipients"
             android:screenOrientation="portrait"
             android:parentActivityName="net.simplyadvanced.ribbit.MainActivity" >
             <meta-data
