@@ -57,6 +57,15 @@
         <activity
             android:name="net.simplyadvanced.ribbit.RecipientsActivity"
             android:label="@string/title_activity_recipients"
+            android:parentActivityName="net.simplyadvanced.ribbit.MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="net.simplyadvanced.ribbit.MainActivity" />
+        </activity>
+        <activity
+            android:name="net.simplyadvanced.ribbit.ViewImageActivity"
+            android:label="@string/title_activity_view_image"
             android:screenOrientation="portrait"
             android:parentActivityName="net.simplyadvanced.ribbit.MainActivity" >
             <meta-data

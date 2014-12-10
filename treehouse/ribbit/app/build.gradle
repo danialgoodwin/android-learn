@@ -28,4 +28,7 @@ dependencies {
 
     compile fileTree(dir: 'libs', include: 'commons-io-*.jar')
 //    compile files('libs/commons-io-2.4.jar')
+
+    compile 'com.squareup.picasso:picasso:2.4.0'
+
 }
