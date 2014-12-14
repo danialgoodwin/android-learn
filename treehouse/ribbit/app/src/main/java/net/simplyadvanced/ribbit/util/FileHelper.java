@@ -13,8 +13,6 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.util.Log;
 
-import net.simplyadvanced.ribbit.ParseConstants;
-
 public class FileHelper {
 	
 	public static final String TAG = FileHelper.class.getSimpleName();

@@ -3,13 +3,35 @@
     package="net.simplyadvanced.ribbit" >
 
     <!-- Required by Parse. -->
+    <!-- Required for Parse API push notifications. -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <!-- Required for Parse API push notifications. -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <!-- Required for Parse API push notifications. -->
     <!-- Required by Parse. -->
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- Required for Parse API push notifications. -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- Required for Parse API push notifications. -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- Required for Parse API push notifications. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <!-- Required to save picture to SD card. -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- Required for Parse API push notifications. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <!-- This must match app's package name + ".permission.C2D_MESSAGE". -->
+    <permission android:protectionLevel="signature"
+                android:name="${applicationId}.permission.C2D_MESSAGE" />
+    <uses-permission android:name="${applicationId}.permission.C2D_MESSAGE" />
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -20,58 +42,93 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/Theme.Ribbit" >
         <activity
-            android:name="net.simplyadvanced.ribbit.MainActivity"
+            android:name="net.simplyadvanced.ribbit.ui.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.INFO" />
             </intent-filter>
         </activity>
         <activity
-            android:name="net.simplyadvanced.ribbit.LoginActivity"
+            android:name=".ui.LoginActivity"
             android:label="@string/title_activity_login"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="net.simplyadvanced.ribbit.SignUpActivity"
+            android:name=".ui.SignUpActivity"
             android:label="@string/title_activity_sign_up"
-            android:parentActivityName="net.simplyadvanced.ribbit.LoginActivity"
+            android:parentActivityName=".ui.LoginActivity"
             android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".LoginActivity" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.INFO" />
+            </intent-filter>
         </activity>
         <activity
-            android:name="net.simplyadvanced.ribbit.EditFriendsActivity"
+            android:name=".ui.EditFriendsActivity"
             android:label="@string/title_activity_edit_friends"
-            android:parentActivityName="net.simplyadvanced.ribbit.MainActivity"
+            android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="net.simplyadvanced.ribbit.MainActivity" />
         </activity>
         <activity
-            android:name="net.simplyadvanced.ribbit.RecipientsActivity"
+            android:name=".ui.RecipientsActivity"
             android:label="@string/title_activity_recipients"
-            android:parentActivityName="net.simplyadvanced.ribbit.MainActivity"
+            android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="net.simplyadvanced.ribbit.MainActivity" />
         </activity>
         <activity
-            android:name="net.simplyadvanced.ribbit.ViewImageActivity"
+            android:name=".ui.ViewImageActivity"
             android:label="@string/title_activity_view_image"
             android:screenOrientation="portrait"
-            android:parentActivityName="net.simplyadvanced.ribbit.MainActivity" >
+            android:parentActivityName=".ui.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="net.simplyadvanced.ribbit.MainActivity" />
         </activity>
+
+        <!-- Required for Parse API push notifications. -->
+        <service android:name="com.parse.PushService" />
+        <receiver android:name="com.parse.ParseBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+        <!--<receiver android:name="com.parse.ParsePushBroadcastReceiver"-->
+        <receiver android:name=".receiver.PushNotificationReceiver"
+                  android:exported="false">
+            <intent-filter>
+                <action android:name="com.parse.push.intent.RECEIVE" />
+                <action android:name="com.parse.push.intent.DELETE" />
+                <action android:name="com.parse.push.intent.OPEN" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.parse.GcmBroadcastReceiver"
+                  android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <!-- This must be the app's package name. -->
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>

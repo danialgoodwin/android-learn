@@ -1,12 +1,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:tools="http://schemas.android.com/tools"
-      tools:context="net.simplyadvanced.ribbit.RecipientsActivity">
+      tools:context="net.simplyadvanced.ribbit.ui.RecipientsActivity">
 
     <item android:id="@+id/action_send"
           android:title="@string/action_send"
           android:orderInCategory="100"
           android:visible="false"
-          android:icon="@android:drawable/ic_menu_send"
+          android:icon="@drawable/ic_menu_send"
           android:showAsAction="always"/>
 
 </menu>
