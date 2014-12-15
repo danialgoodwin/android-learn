@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="D:\dev\android\learn\treehouse\mememaker\app\build\intermediates\pre-dexed\debug\commons-io-2.4-ba676393db0310c67bcb116e3316c4a2b4e0f34d.jar"
+        jar="D:\dev\android\learn\treehouse\mememaker\app\libs\commons-io-2.4.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad"/>
+    <item
+        dex="D:\dev\android\learn\treehouse\mememaker\app\build\intermediates\pre-dexed\debug\support-v13-19.0.1-35fad1d1f295e83ea75d21af2b1e469899d89f02.jar"
+        jar="D:\dev\android\android-sdk\extras\android\m2repository\com\android\support\support-v13\19.0.1\support-v13-19.0.1.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="a4d00c1fa39c05a544fc2221af40bbf76e07c7df"/>
+    <item
+        dex="D:\dev\android\learn\treehouse\mememaker\app\build\intermediates\pre-dexed\debug\support-v4-19.0.1-3a455eeb649036da76b28c39543d20a0ec654d8d.jar"
+        jar="D:\dev\android\android-sdk\extras\android\m2repository\com\android\support\support-v4\19.0.1\support-v4-19.0.1.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="587da9a481ffd341d2fa091704489b89845ddacd"/>
+
+</pre-dex-items>

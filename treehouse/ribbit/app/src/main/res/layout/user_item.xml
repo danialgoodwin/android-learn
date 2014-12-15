@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white">
+
+    <!-- More info about why adjustViewBounds isn't working and a workaround:
+         https://teamtreehouse.com/forum/androidadjustviewboundstrue-not-working -->
+    <ImageView
+        android:id="@+id/userImageView"
+        style="@style/GridImage"
+        android:src="@drawable/avatar_empty"
+        android:contentDescription="@string/content_desc_user_avatar"/>
+
+    <ImageView
+        android:id="@+id/checkImageView"
+        style="@style/GridImage"
+        android:src="@drawable/avatar_selected"
+        android:contentDescription="@string/content_desc_user_checkmark"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/nameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:maxLines="2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/userImageView"
+        android:padding="4dp"/>
+
+</RelativeLayout>
